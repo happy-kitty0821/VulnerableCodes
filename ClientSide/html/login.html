@@ -5,35 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!-- copying this from github -->
     <script src="/js/login.js"></script>
+    <link rel="stylesheet" href="/css/login.css">
     <title>Login Page</title>
 </head>
 <body>
-    <form class="signin" action="#" method="POST">
-        <div class="content">
-          <h2><span class="auto-typing"></span></h2>
-          <div class="form">
-            <div class="inputBox">
-              <input type="text" required>
-              <i>Username</i>
-            </div>
-            <div class="inputBox">
-              <input type="password" required>
-              <i>Password</i>
-            </div>
-            <div class="links">
-              <a href="#">Forgot Password</a>
-              <a href="#">Signup</a>
-            </div>
-            <div class="inputBox">
-              <input type="submit" value="Login">
-            </div>
-          </div>
-        </div>
-      </form>
+  <div class="msg">
+    <h1>
+      <span class="not-welcomed">
+
+      </span>
+    </h1>
+  </div>
+  <div class="option">
+    <div>
+      <button class="button1" onclick="info()">GoBack</button>
+    </div>
+    <div>
+      <button class="button1" onclick="showmessage()">Dont GoBack</button>
+    </div>
+  </div>
 </body>
 <script>
-    var typed = new Typed(".auto-typing", {
-      strings : ["Login", "Sign In", "Tap Into"], 
+    var typed = new Typed(".not-welcomed", {
+      strings : ["what are u doing here??", "Get Out", "There is nothing here", "Y are u here???"], 
       typeSpeed : 200, 
       backSpeed : 200, 
       loop : true
