@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> <!-- copying this from github -->
+    <script src="/js/login.js"></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <form class="signin" action="#" method="POST">
+        <div class="content">
+          <h2><span class="auto-typing"></span></h2>
+          <div class="form">
+            <div class="inputBox">
+              <input type="text" required>
+              <i>Username</i>
+            </div>
+            <div class="inputBox">
+              <input type="password" required>
+              <i>Password</i>
+            </div>
+            <div class="links">
+              <a href="#">Forgot Password</a>
+              <a href="#">Signup</a>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="Login">
+            </div>
+          </div>
+        </div>
+      </form>
+</body>
+<script>
+    var typed = new Typed(".auto-typing", {
+      strings : ["Login", "Sign In", "Tap Into"], 
+      typeSpeed : 200, 
+      backSpeed : 200, 
+      loop : true
+    })
+</script>
+</html>
