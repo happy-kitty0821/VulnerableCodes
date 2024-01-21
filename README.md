@@ -4,6 +4,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/happy-kitty0821/VulnerableCodes)
 ![GitHub contributors](https://img.shields.io/github/contributors/happy-kitty0821/VulnerableCodes)
 ![GitHub stars](https://img.shields.io/github/stars/happy-kitty0821/VulnerableCodes?style=social)
+![GitHub language count](https://img.shields.io/github/languages/count/happy-kitty0821/VulnerableCodes)
 
 ## Introduction
 
