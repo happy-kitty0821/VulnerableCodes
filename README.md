@@ -3,6 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/happy-kitty0821/VulnerableCodes)
 ![GitHub last commit](https://img.shields.io/github/last-commit/happy-kitty0821/VulnerableCodes)
 ![GitHub contributors](https://img.shields.io/github/contributors/happy-kitty0821/VulnerableCodes)
+![GitHub stars](https://img.shields.io/github/stars/happy-kitty0821/VulnerableCodes?style=social)
 
 ## Introduction
 
@@ -46,6 +47,10 @@ To get started, clone the repository to your local machine:
 git clone https://github.com/happy-kitty0821/VulnerableCodes.git
 cd VulnerableCodes
 ```
+
+## license
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 ## Exploration
 The repository is organized into directories based on vulnerability types.
