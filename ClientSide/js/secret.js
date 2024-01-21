@@ -1,8 +1,11 @@
 //how many encryptions are there??????
 //there is a saying that only the username must match to be login
 //base 64 = R0kzREdSUlRHUVpUSU0yRUdJM0RHUlJVR0UyRFNOQlhHTVpESU5JPQ==
+// Userhash:    R0kzREdaUlRHUVpUSU0zRUdJM0RHWlJVR0UyRFNOQlhHTVpESU5JPQ==
 
-const username = "R0kzREdSUlRHUVpUSU0yRUdJM0RHUlJVR0UyRFNOQlhHTVpESU5JPQ==s"
+
+
+let username = "R0kzREdaUlRHUVpUSU0zRUdJM0RHWlJVR0UyRFNOQlhHTVpESU5JPQ=="
 
 function msg1(){
     alert("yooo mate chill y u tryin to change password of the account that u dont even own ^_^ bruhhhh")
@@ -15,23 +18,23 @@ function msg2(){
 }
 function encryption1() {
     // Assuming "username" is the ID of an input element, you need to use quotes around it.
-    var username = document.getElementById("username").value
+    var usernameEnt = document.getElementById("username").value
     // Check if the username is not empty before proceeding with encryption transformation.
-    if (username) {
+    if (usernameEnt) {
         // Different variable name for encryption transformation
         var encryptedUsername = ""
-        for (var i = 0; i < username.length; i++) {
-            var charCode = username.charCodeAt(i)
+        for (var i = 0; i < usernameEnt.length; i++) {
+            var charCode = usernameEnt.charCodeAt(i)
             if (charCode >= 65 && charCode <= 90) {
                 encryptedUsername += String.fromCharCode(((charCode - 65 + 13) % 26) + 65);
             } else if (charCode >= 97 && charCode <= 122) {
                 encryptedUsername += String.fromCharCode(((charCode - 97 + 13) % 26) + 97);
             } else {
-                encryptedUsername += username.charAt(i)
+                encryptedUsername += usernameEnt.charAt(i)
             }
         }
-        console.log("Original username:", username);
-        console.log("Encrypted username (ROT13):", encryptedUsername);
+        console.log("Original username:", usernameEnt);
+        console.log("Encrypted username:", encryptedUsername);
         // encryptedUsername
         encryption2(encryptedUsername)
     } else {
@@ -114,12 +117,20 @@ function convertToBase32(input) {
 
     // Handle any remaining bits
     if (bits.length > 0) {
+        // If there are remaining bits, add padding and convert to base32
         var padding = '0'.repeat(5 - bits.length);
-        base32String += base32Chars[parseInt(bits + padding, 2)];
+        bits += padding;
+        base32String += base32Chars[parseInt(bits, 2)];
+    }
+
+    // Add padding '=' characters to ensure proper length
+    while (base32String.length % 8 !== 0) {
+        base32String += '=';
     }
 
     return base32String;
 }
+
 
 function encryption5(userhash4) {
     if (userhash4) {
@@ -129,6 +140,7 @@ function encryption5(userhash4) {
         //for login
         if (userhashBase64 == username){
             alert("nicu")
+            window.location.href = 'falg.html'; // Redirect to dopes.html after successful login
         }
         else(
             alert("login failed")

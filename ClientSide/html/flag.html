@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlagHere</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        p {
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            background-color: #fff; /* Set background color to white */
+            padding: 10px; /* Add some padding for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to generate a random paragraph
+        function generateRandomParagraph() {
+            const words = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua."];
+            const paragraphLength = Math.floor(Math.random() * 50) + 5; // Random length between 5 and 50 words
+            let paragraph = "";
+
+            for (let i = 0; i < paragraphLength; i++) {
+                const randomIndex = Math.floor(Math.random() * words.length);
+                paragraph += words[randomIndex] + " ";
+            }
+
+            return paragraph.trim(); // Remove trailing space
+        }
+
+        // Generate 5000 random paragraphs and append them to the body
+        for (let i = 1; i <= 5000; i++) {
+            const paragraph = generateRandomParagraph();
+            document.body.innerHTML += `<p>${paragraph}</p>`;
+        }
+    </script>
+    <footer hidden></footer>
+</body>
+<footer hidden>
+    IIC_CTF{W@uu__I+W@$L0|\|g}
+</footer>
+</html>
