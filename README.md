@@ -26,7 +26,11 @@ VulnerableCodes includes a variety of code examples that demonstrate different t
 - Cross-Site Request Forgery (CSRF)
 - Insecure Direct Object References (IDOR)
 - Security Misconfigurations
-- and more...
+- Prevlidge Escalation
+- Clinet Side Login
+- Server Side Request Forgery(SSRF)
+- Broken Authentication
+
 
 ### Realistic Scenarios
 
