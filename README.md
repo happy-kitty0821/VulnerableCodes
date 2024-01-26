@@ -32,6 +32,7 @@ VulnerableCodes includes a variety of code examples that demonstrate different t
 - Clinet Side Login
 - Server Side Request Forgery(SSRF)
 - Broken Authentication
+- Wireshark Packet Analysis
 
 
 ### Realistic Scenarios
