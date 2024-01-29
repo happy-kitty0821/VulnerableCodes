@@ -1,0 +1,110 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <title>Bonsai Paradise</title>
+    <!------using internal css.------>
+    <style>
+      h1 {
+        color: blue;
+      }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <!--Linking external css file.-->
+    <!--Google fonts link.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,500;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,500;1,200&display=swap");
+    </style>
+  </head>
+  <body>
+    <!----Using Internal JavaScript.---->
+    <script>
+      alert("Welcome to Bonsai Paradise.");
+    </script>
+    <div class="header">
+      <!--This is the header section container-->
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="{% static 'images/logo.png' %}" width="125px" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="research.html">Research</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="Feedback.html">Feedback</a></li>
+            </ul>
+          </nav>
+          <img
+            src="{% static 'images/cart3.png'%}"
+            width="50px"
+            height="50px"
+          />
+        </div>
+        <div class="row">
+          <div class="c-1">
+            <h1>Bringing nature indoors</h1>
+            <p>
+              Life is all about beauty and nature.<br />Nature gives life and
+              life itself is a beauty.
+            </p>
+            <a href="products.html" class="button">Explore Now &#10141;</a>
+          </div>
+          <div class="c-1">
+            <img src="{% static 'images/zen.jpg'%}" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer Section-->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="f1">
+            <img class="logo" src="{%static 'images/logo.png'%}" width="100px" />
+            <!----Using inline css------->
+            <p style="color: purple">
+              Providing excellence with <br />technoogy
+            </p>
+          </div>
+          <div class="f2">
+            <h3>Contact Us</h3>
+            <p>
+              Whatsapp <br />+977 9800000000<br />
+              email<br />
+              bonsaiInfo@gmail.com
+            </p>
+          </div>
+          <div class="f3">
+            <h3>Useful links</h3>
+            <ul>
+              <li>Policy</li>
+              <li>Affiliate</li>
+              <li>Enquiry</li>
+            </ul>
+          </div>
+          <div class="f4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Discord</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

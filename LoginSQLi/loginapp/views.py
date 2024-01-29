@@ -1,17 +1,7 @@
 from django.shortcuts import render
-from django.shortcuts import redirect
-from django.shortcuts import HttpResponse
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-import json
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from decimal import Decimal
-from django.utils import timezone
 
 # Create your views here.
-def home(request):
+def homePage(request):
     return render(request, 'index.html')
 
 
