@@ -6,6 +6,8 @@
     <title>Bonsai Paradise</title>
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
     <!--Linking external css file.-->
+        <!-- Include Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <div style="background: whitesmoke" class="header">
@@ -20,7 +22,18 @@
               <li><a href="home">Home</a></li>
               <li><a href="#">Products</a></li>
               <li><a href="blog.html">Blog</a></li>
-              <li><a href="login">Login</a></li>
+              <li class="nav-item dropdown">
+                <!-- Dropdown button with options -->
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  User Type
+                </a>
+                <!-- Dropdown menu -->
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="login">Admin</a>
+                  <a class="dropdown-item" href="#">Customer</a>
+                </div>
+              </li>
               <li><a href="Feedback.html">Feedback</a></li>
             </ul>
           </nav>
@@ -117,5 +130,8 @@
         </div>
       </div>
     </div>
+     <!-- Include Bootstrap JS and Popper.js -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>

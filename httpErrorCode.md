@@ -1,22 +1,5 @@
 # Http Error Codes
 ---
-    
-    <title>HTTP Status Codes</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
 
@@ -64,5 +47,7 @@
         </tr>
     </tbody>
 </table>
+
 ---
+
 

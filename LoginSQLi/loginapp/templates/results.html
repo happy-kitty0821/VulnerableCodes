@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h2>Results</h2>
+
+    <div class="Footer">
+        <footer>
+            <button onclick="toggleResults()">Toggle Results</button>
+            <div id="resultContainer" class="hidden">
+                {% if result %}
+                <p>Result:</p>
+                <ul>
+                    {% for item in result %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No result available.</p>
+                {% endif %}
+            </div>
+            IIC_CTF{$qL!_!$_$^c^@^R^&¥}
+        </footer>
+    </div>
+
+    <script>
+        function toggleResults() {
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.classList.toggle('hidden');
+        }
+    </script>
 </body>
+
 </html>
