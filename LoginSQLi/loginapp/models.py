@@ -8,3 +8,13 @@ class User(models.Model):
         query = f"SELECT * FROM User WHERE username = '{input_username}' AND password = '{input_password}'"
         result = User.objects.raw(query)
         return result
+
+
+class Feedbacks(models.Model):
+    username = models.CharField(max_length=50)
+    email = models.CharField(max_length=40)
+    contact = models.CharField(max_length=15)
+    message = models.CharField(max_length=1000) 
+    
+    def __str__(self):
+        return f"{self.username} {self.email} {self.contact} {self.message}"

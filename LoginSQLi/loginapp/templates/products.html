@@ -1,0 +1,121 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bonsai Paradise</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <!--Linking external css file.-->
+  </head>
+  <body>
+    <div style="background: whitesmoke" class="header">
+      <!--This is the header section container-->
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="{% static 'images/logo.png' %}" width="125px" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="home">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="login">Login</a></li>
+              <li><a href="Feedback.html">Feedback</a></li>
+            </ul>
+          </nav>
+          <img src="{% static 'images/cart3.png' %}" width="50px" height="50px" />
+        </div>
+      </div>
+    </div>
+
+    <div class="catagories">
+      <h2 style="background: burlywood" class="title">Products</h2>
+      <div class="container-1">
+        <div class="row">
+          <div class="c-2">
+            <img src="{% static 'images/bonsai1.jpg' %}" />
+            <h4>Bonsai Jungle</h4>
+            <p>A mini jungle in your room.<br /><b>Price:</b><s>$100</s>$90</p>
+          </div>
+          <div class="c-2">
+            <img src="{% static 'images/bonsai2.webp' %}" />
+            <h4>Pine Bonsai</h4>
+            <p>
+              A beautiful pine tree for your living room.<br /><b>Price:</b
+              ><s>$85</s>$72
+            </p>
+          </div>
+          <div class="c-2">
+            <img src="{% static 'images/bonsai3.jpg' %}" />
+            <h4>Blossam Bonsai</h4>
+            <p>
+              Bringing cherry blossam indoors.<br /><b>Price:</b><s>$225</s>$200
+            </p>
+          </div>
+          <div class="c-2">
+            <img src="{% static 'images/bonsai7.jpg' %}" />
+            <h4>Forest Bonsai</h4>
+            <p>
+              Growing a forest by yourself<br /><b>Price:</b><s>$145</s>$100
+            </p>
+          </div>
+          <div class="c-2">
+            <img src="{% static 'images/bonsai5.jpg' %}" />
+            <h4>Bonsai Flower</h4>
+            <p>
+              Beautiful flower for your room ambieance.<br /><b>Price:</b
+              ><s>$180</s>$130
+            </p>
+          </div>
+          <div class="c-2">
+            <img src="{% static 'images/bonsai4.jpeg' %}" />
+            <h4>Bonsai Tree</h4>
+            <p>
+              A well maintained bonsai for your well maintained home.<br /><b
+                >Price:</b
+              ><s>$140</s>$110
+            </p>
+          </div>
+        </div>
+        <a href="moreproducts" class="button">See more &#10141;</a>
+      </div>
+    </div>
+
+    <!--Footer Section-->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="f1">
+            <img class="logo" src="{% static 'images/logo.png'%}" width="100px" />
+            <p>Providing excellence with <br />technoogy</p>
+          </div>
+          <div class="f2">
+            <h3>Contact Us</h3>
+            <p>
+              Whatsapp <br />+977 9800000000<br />
+              email<br />
+              bonsaiInfo@gmail.com
+            </p>
+          </div>
+          <div class="f3">
+            <h3>Useful links</h3>
+            <ul>
+              <li>Policy</li>
+              <li>Affiliate</li>
+              <li>Enquiry</li>
+            </ul>
+          </div>
+          <div class="f4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Discord</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bonsai Paradise</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" />
+    <!--Linking external css file.-->
+  </head>
+  <body>
+    <div style="background: whitesmoke" class="header">
+      <!--This is the header section container-->
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="{% static 'images/logo.png' %}" width="125px" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="home">Home</a></li>
+              <li><a href="products">Products</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="login">Login</a></li>
+              <li><a href="#">Feedback</a></li>
+            </ul>
+          </nav>
+          <img
+            src="{% static 'images/cart3.png' %}"
+            width="50px"
+            height="50px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="catagories-3">
+      <h2 style="background: burlywood" class="title2">Feedback</h2>
+      <h3>Please share your experience and give us some feedback</h3>
+      <form method="post" action="#" id="feedbackForm">
+        {% csrf_token %}  
+        <input type="text" class="input-field" id="name" name="name" placeholder="Name" />
+        <small class="error"></small>
+        <br />
+        <input type="email" class="input-field" id="email" name="email" placeholder="Email"/>
+        <small class="error"></small>
+        <br/>
+        <input type="number" class="input-field" id="subject" name="contact" placeholder="Contact"/>
+        <small class="error"></small>
+        <br/>
+        <textarea type="text" class="input-field textarea-field" id="message" name="message" placeholder="Message"></textarea>
+        <small class="error"></small>
+        <br/>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      <p id="success"></p>
+    </div>
+    <!-- <script src="{% static 'js/Script.js' %}"></script> -->
+
+    <!--Footer Section-->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="f1">
+            <img
+              class="logo"
+              src="{% static 'images/logo.png' %}"
+              width="100px"
+            />
+            <p>Providing excellence with <br />technoogy</p>
+          </div>
+          <div class="f2">
+            <h3>Contact Us</h3>
+            <p>
+              Whatsapp <br />+977 9800000000<br />
+              email<br />
+              bonsaiInfo@gmail.com
+            </p>
+          </div>
+          <div class="f3">
+            <h3>Useful links</h3>
+            <ul>
+              <li>Policy</li>
+              <li>Affiliate</li>
+              <li>Enquiry</li>
+            </ul>
+          </div>
+          <div class="f4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Discord</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
