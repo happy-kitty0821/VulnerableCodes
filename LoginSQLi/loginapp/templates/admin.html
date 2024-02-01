@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Include Bootstrap (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iK7t1TIPO0ntxmStvyH/EHoA7hB/WqQDI2RgU6dJ7eb3sFcpk6p2LOeNf" crossorigin="anonymous">
+
+    <!-- Style for the dashboard -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .dashboard-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .chart-container {
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .user-list-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Professional Dashboard -->
+        <div class="dashboard-container">
+            <h1 class="text-center">Professional Dashboard</h1>
+
+            <!-- Bar Chart -->
+            <div class="chart-container">
+                <h2>Bar Chart</h2>
+                <canvas id="barChart"></canvas>
+            </div>
+
+            <!-- Line Chart -->
+            <div class="chart-container">
+                <h2>Line Chart</h2>
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <!-- Doughnut Chart -->
+            <div class="chart-container">
+                <h2>Doughnut Chart</h2>
+                <canvas id="doughnutChart"></canvas>
+            </div>
+
+            <!-- Radar Chart -->
+            <div class="chart-container">
+                <h2>Radar Chart</h2>
+                <canvas id="radarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- User List Section -->
+    <div class="container user-list-container">
+        <h1 class="text-center">User List</h1>
+
+        <!-- Display user data in a table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Your existing footer section -->
+    <div class="Footer">
+        <footer>
+            IIC_CTF{$qL!_!$_$^c^@^R^&¥}
+        </footer>
+    </div>
+
+    <!-- JavaScript to generate random data and create charts -->
+    <script>
+        // Function to generate random data
+        function generateRandomData(length) {
+            return Array.from({ length }, () => Math.floor(Math.random() * 100));
+        }
+
+        // Function to create a chart
+        function createChart(chartId, chartType, chartData) {
+            var ctx = document.getElementById(chartId).getContext('2d');
+            new Chart(ctx, {
+                type: chartType,
+                data: {
+                    labels: Array.from({ length: chartData.length }, (_, i) => i + 1),
+                    datasets: [{
+                        label: 'Random Data',
+                        data: chartData,
+                        backgroundColor: getRandomColor(),
+                        borderColor: getRandomColor(),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Generate random data and create charts
+        var barChartData = generateRandomData(5);
+        createChart('barChart', 'bar', barChartData);
+
+        var lineChartData = generateRandomData(7);
+        createChart('lineChart', 'line', lineChartData);
+
+        var doughnutChartData = generateRandomData(4);
+        createChart('doughnutChart', 'doughnut', doughnutChartData);
+
+        var radarChartData = generateRandomData(6);
+        createChart('radarChart', 'radar', radarChartData);
+
+        // Function to get a random color
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Admin Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@
 <body>
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        <h2>Login</h2>
+        <h2>Login ad Admin</h2>
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}

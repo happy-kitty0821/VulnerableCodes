@@ -1,0 +1,25 @@
+name: IIC_CTF
+username: iic_ctf
+password: c@p+Ure
+
+steps
+1) Update the system packages
+sudo apt update -y
+sudo apt upgrade -y
+
+2) Install nginx
+
+apt install nginx-core nginx-extras
+
+2.1) Start nginx
+
+systemctl start nginx
+
+2.2) See status of nginx
+
+systemctl statuss nginx
+
+3) Install git
+
+apt install git -y
+

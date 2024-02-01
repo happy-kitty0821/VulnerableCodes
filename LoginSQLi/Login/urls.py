@@ -26,4 +26,8 @@ urlpatterns = [
     path('feedbacks/', views.feedbacks, name='feedbacks'),
     path('login/', views.login, name='login'),
     path('feedbacks/login', views.login, name='login'),
+    path('customerLogin/', views.customerLogin, name='customerLogin'),
+    path('customerLogin/customerReg', views.customerReg, name='customerReg'),
+    path('products/moreproducts/login', views.login, name='login'),
+    path('products/login', views.login, name='login')
 ]
