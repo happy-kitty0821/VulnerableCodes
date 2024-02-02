@@ -81,7 +81,7 @@ def customerLogin(request):
             result = cursor.fetchall()
             print(f"result: {result}")
         if result:
-            return render(request, 'customer.html', {'user': result[0]})
+            return JsonResponse({'success': True, 'message': 'Login Success Here is the flag:IIC_CTF{UseEncryptionInPassword}'})
         else:
             # Authentication failed
              return JsonResponse({'success': False, 'message': 'Invalid credentials'})

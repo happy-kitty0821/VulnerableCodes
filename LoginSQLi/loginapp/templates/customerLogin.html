@@ -108,9 +108,10 @@
                     // Response from the server
                     console.log('Response:', response);
         
-                    //if (response.success) {
+                    if (response.success) {
                         // Display success message
-                      //  alert('Login successful');} 
+                      alert('Login successful' + response.message)
+                    } 
                     if (response.False){
                         // Display failure message
                         alert('Login failed. ' + response.message);
@@ -125,5 +126,4 @@
         
     </script>
 </body>
-
 </html>
