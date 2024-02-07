@@ -1,0 +1,29 @@
+$pt-th-padding-right: 12px;
+//$error-color: orangered;
+
+.pt > tbody > tr {
+    &.bottom > td {
+        padding-bottom: 12px;
+    }
+
+    //&.error > input:not(:focus) {
+    //    border-color: $error-color;
+    //}
+
+    > th {
+        padding-right: $pt-th-padding-right;
+        text-align: right;
+
+        > label {
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+
+    > td {
+        > input, > select {
+            min-height: 45px;
+            padding-left: $pt-th-padding-right;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{% load crispy_forms_field %}
+
+{#<table class="pt">#}
+{#<tbody>#}
+{#    <tr>#}
+{#        <th><label for="id_username">Имя пользователя</label></th>#}
+{#        <td><input id="id_username" type="text" name="username" maxlength="30" class="form-control"></td></tr><tr class="bottom"><th></th>#}
+{#        <td></td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#        <th><label for="id_email">Электронная почта</label></th>#}
+{#        <td><input type="text" name="email" id="id_email" class="form-control"></td></tr><tr class="bottom"><th></th>#}
+{#        <td></td>#}
+{#    </tr>#}
+{#<tr><th><label for="id_password1">Пароль</label></th><td><input type="password" name="password1" id="id_password1" class="form-control"></td></tr><tr class="bottom"><th></th><td></td></tr>#}
+{#<tr><th><label for="id_password2">ещё раз</label></th><td><input type="password" name="password2" id="id_password2" class="form-control"></td></tr><tr class="bottom"><th></th><td></td></tr><script>$(".pt>tbody>tr>td>input,.pt>tbody>tr>td>select,.pt>tbody>tr>td>textarea").addClass("form-control")</script>#}
+{#                    <tr>#}
+{#                        <th></th>#}
+{#                        <td>#}
+{#                            <input class="btn btn-primary btn-lg" type="submit" value="Зарегистрироваться">#}
+{#                        </td>#}
+{#                    </tr>#}
+{#                </tbody></table>#}
+
+
+
+{#<div id="div_id_username" class="form-group has-error">#}
+{#    <label for="id_username" class="control-label  requiredField">#}
+{#        Bsмя пользователя#}
+{#    </label>#}
+{#    <div class="controls ">#}
+{#        <input id="id_username" type="text" class="textinput textInput form-control" name="username" maxlength="30">#}
+{#        <span id="error_1_id_username" class="help-block">#}
+{#            Обязательное поле#}
+{#        </span>#}
+{#    </div>#}
+{#</div>#}
+
+
+{% if field.is_hidden %}
+	{{ field }}
+{% else %}
+	<tr{% if form_show_errors and field.errors %} class="has-error"{% endif %}>
+        <th>
+            {% if field.label and not field|is_checkbox and form_show_labels %}
+    {#			<label for="{{ field.id_for_label }}" class="control-label {{ label_class }}">#}
+                <label for="{{ field.id_for_label }}">
+                    {{ field.label|safe }}
+                </label>
+            {% endif %}
+        </th>
+
+{#        {% if field|is_checkboxselectmultiple %}#}
+{#            {% include 'bootstrap3/layout/checkboxselectmultiple.html' %}#}
+{#        {% endif %}#}
+{##}
+{#        {% if field|is_radioselect %}#}
+{#            {% include 'bootstrap3/layout/radioselect.html' %}#}
+{#        {% endif %}#}
+
+        <td>
+            {% if not field|is_checkboxselectmultiple and not field|is_radioselect %}
+                {% if field|is_checkbox and form_show_labels %}
+    {#                {% if label_class %}#}
+    {#                    <div class="controls col-lg-offset-{{ label_size }} {{ field_class }}">#}
+    {#                {% endif %}#}
+    {#                <label for="{{ field.id_for_label }}" class="{% if field.field.required %} requiredField{% endif %}">#}
+    {#                    {% crispy_field field 'class' 'checkbox' %}#}
+    {#                    {{ field.label|safe }}#}
+    {#                    {% include 'bootstrap3/layout/help_text_and_errors.html' %}#}
+    {#                </label>#}
+    {#                {% if label_class %}#}
+    {#                    </div>#}
+    {#                {% endif %}#}
+                {% else %}
+    {#                <div class="controls {{ field_class }}">#}
+                        {% crispy_field field %}
+    {#                </div>#}
+                {% endif %}
+            {% endif %}
+        </td>
+	</tr>
+
+    <tr class="bottom has-error">
+        <th></th>
+        <td>
+            {% include 'bootstrap3/layout/help_text_and_errors.html' %}
+        </td>
+    </tr>
+{% endif %}
