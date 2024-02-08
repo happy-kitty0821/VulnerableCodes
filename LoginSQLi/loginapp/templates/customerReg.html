@@ -70,7 +70,7 @@
 <body>
     <div class="container">
         <h2><span class="sapn-register"></span></h2>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
                 <label for="username">Username:</label>
@@ -88,10 +88,13 @@
             </div> 
 
             <div>    
-                <label for="Amount">Password:</label>
+                <label for="Password">Password:</label>
                 <input type="password" id="password" name="password" required>
             </div> 
-
+            <div>
+                <label for="profilePic">Profile Picture:</label> <!-- Add a label for the profile picture field -->
+                <input type="file" id="profilePic" name="profilePic" accept="*"> <!-- Add input field for file upload -->
+            </div>
             <div>
                 <button type="submit">Register</button>
             </div>    

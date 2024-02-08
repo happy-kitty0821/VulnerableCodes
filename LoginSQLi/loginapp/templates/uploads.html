@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Pictures</title>
+    <style>
+        /* Add your CSS styles here */
+        .user-profile {
+            margin-bottom: 20px;
+        }
+        .user-profile img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uploaded Profile Pictures</h1>
+    {% if users_with_profile_pic %}
+        {% for user in users_with_profile_pic %}
+            <div class="user-profile">
+                <h3>{{ user.username }}</h3>
+                <img src="{{ user.profilePic.url }}" alt="{{ user.username }}'s Profile Picture">
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No profile pictures uploaded yet.</p>
+    {% endif %}
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Profile Pictures</title>
+</head>
+<body>
+    <h1>Files in Profile Pictures Directory</h1>
+    {% if profile_pic_data %}
+        <ul>
+            {% for file_name, file_url in profile_pic_data %}
+                <li>
+                    <a href="{{ file_url }}" target="_blank">{{ file_name }}</a>
+                    <p>{{ file_name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No files found in the profile pictures directory.</p>
+    {% endif %}
+</body>
+</html>

@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from loginapp import views
+from django.conf import settings  # Import settings
+from django.conf.urls.static import static  # Import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +31,10 @@ urlpatterns = [
     path('customerLogin/', views.customerLogin, name='customerLogin'),
     path('customerLogin/customerReg', views.customerReg, name='customerReg'),
     path('products/moreproducts/login', views.login, name='login'),
-    path('products/login', views.login, name='login')
+    path('products/login', views.login, name='login'),
+    path('uploads', views.showUploadedPic, name='uploads'),
 ]
+
+# Serve media files during development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

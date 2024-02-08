@@ -94,6 +94,7 @@ def customerReg(request):
         email = request.POST.get('email')
         contact = request.POST.get('contact')
         password = request.POST.get('password')
+        profile_pic = request.FILES.get('profilePic')
         print(f"user registration credentials 1. Username {username} 2. Password:{password}")
         # Check if the username is already taken
         if User.objects.filter(username=username).exists():
@@ -109,7 +110,8 @@ def customerReg(request):
             username=username,
             email=email,
             contact=contact,
-            password=password
+            password=password,
+             profilePic=profile_pic
         )
         new_customer.save()
 
@@ -127,3 +129,28 @@ def feedbacks(request):
         feedback = Feedbacks(username=username, email=email, contact=contact, message=message)
         feedback.save()
     return render(request, 'feedback.html')
+
+# def showUploadedPic(request):
+#     # Retrieve all users with profile pictures
+#     users_with_profile_pic = User.objects.exclude(profilePic__isnull=True).exclude(profilePic__exact='')
+#     context = {
+#         'users_with_profile_pic': users_with_profile_pic
+#     }
+#     return render(request, 'uploads.html', context)
+
+import os
+from django.conf import settings
+def showUploadedPic(request):
+    # Define the path to the profile pictures directory
+    profile_pic_dir = os.path.join(settings.MEDIA_ROOT, 'profilePics')
+    # Get a list of all files in the directory
+    profile_pic_files = os.listdir(profile_pic_dir)
+    # Generate URLs for the images
+    profile_pic_urls = [os.path.join(settings.MEDIA_URL, 'profilePics', file) for file in profile_pic_files]
+    # Zip the lists
+    profile_pic_data = zip(profile_pic_files, profile_pic_urls)
+    context = {
+        'profile_pic_data': profile_pic_data
+    }
+
+    return render(request, 'uploads.html', context)

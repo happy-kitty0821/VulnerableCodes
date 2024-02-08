@@ -5,6 +5,7 @@ class User(models.Model):
     password = models.CharField(max_length=50)
     email = models.EmailField(max_length=100, default="user@email.com.uk")
     contact = models.CharField(max_length=20, default="0000000000")
+    profilePic = models.ImageField(null=True, upload_to='profilePics/')
 
     def __str__(self):
         return self.username
