@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left top">
+      <div class="card-body">
+        <h1>{{ object.title }}</h1>
+        <p class="text-muted">{{ object.author }} | {{ object.created_on }}</p>
+        <p class="card-text">{{ object.content | safe }}</p>
+        
+        <!-- Comments Section -->
+        <div class="card-footer">
+          <h5>Comments</h5>
+          <ul class="list-unstyled">
+            {% for comment in object.comments.all %}
+            <li>
+              <strong>{{ comment.user }}</strong>
+              <p>{{ comment.content | safe }}</p> <!-- Use the safe filter here to introduce vulnerability -->
+            </li>
+            {% empty %}
+            <li>No comments yet.</li>
+            {% endfor %}
+          </ul>
+          <!-- Comment Form -->
+          <form action="{% url 'post_detail' object.slug %}" method="post">
+
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="comment">Write a comment:</label>
+              <textarea id="comment" name="comment" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // Function to request the flag from the server
+function requestFlag() {
+  fetch('/development')
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.text();  // Assuming the flag is returned as plain text
+  })
+  .then(flag => {
+      console.log('Flag:', flag);
+  })
+  .catch(error => {
+      console.error('There was a problem with the flag request:', error);
+  });
+}
+</script>
+{% endblock %}

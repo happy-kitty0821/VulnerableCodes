@@ -1,0 +1,15 @@
+this is a test message 
+this is a test message 
+ohgjklhklhl
+the dir location to the flag is here
+[happy-kitty@happy-kitty] Django_blog-1 $  tree media/
+media/
+├── feedbacks
+│   ├── feedbacks.txt
+│   └── flag.txt
+└── profilePics
+    ├── lock.png
+    ├── wallhaven-1pw3q3.jpg
+    └── WorldCUpBoot.png
+
+3 directories, 5 files

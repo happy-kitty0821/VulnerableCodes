@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a Blog Post</title>
+{% endblock %}
+
+{% block content %}
+<div class="containerWriteBlog">
+    <h2>Write a Blog Post</h2>
+    {% if messages %}
+        <ul class="writeBlogMessages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="{% url 'writeBlog' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="0">Draft</option>
+                <option value="1">Publish</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" style="background-color: #4CAF50;">Submit Post</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
